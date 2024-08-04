@@ -1,0 +1,17 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles2.css' %}">
+</head>
+<body>
+    <h2>Uploaded Images</h2>
+    <ul>
+        {% for image in images %}
+            <li>{{ image.title }}<br><img src="{{ image.image.url }}" width="200"></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_image' %}">Upload Another Image</a>
+</body>
+</html>
